@@ -1,0 +1,33 @@
+<div class="grid" ng-controller="backup" ng-init="total=<?= $total ?>">
+    <div class="toolbar">
+        <div class="tool" >
+            <label>&nbsp;&nbsp;<span class="button" ng-click="backup()" > 备 份 </span>&nbsp;&nbsp;<span class="button" onclick="deletebak()" > 删 除 </span> </label>&nbsp;&nbsp;
+        </div>
+    </div>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>序号</th>
+                    <th>文件名</th>
+                    <th>备份时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form action="/system/delbackup" id="delback" method="post"></form>
+                <tr ng-repeat="item in list">
+                    <td><input type="checkbox" name="backfile[]" value="{_ item['filename'] _}" form="delback"></td>
+                    <td ng-bind="pagenum * ( info.p - 1 ) + $index+1"></td>
+                    <td ng-bind="item['filename']"></td>
+                    <td ng-bind="item['mtime']"></td>
+                    <td><a href="{_ item['path'] _}">[ 下 载 ]</a>&nbsp;&nbsp;<a href="/system/delbackup/{_ item['filename'] _}">[ 删 除 ]</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <?= $this->partial('public/paging') ?>
+    </div>
+
+</div>
+<script src="/js/backup.js"></script>

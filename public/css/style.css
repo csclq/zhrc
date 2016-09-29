@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+header{
+    height: 12vh;
+    line-height: 12vh;
+    background: #f00;
+    color:#fff;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+
+}
+
+.company{
+    font-size: 1.6em;
+    width: 60vw;
+}
+.company img{
+    height: 50%;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+.user *{
+    margin: 0 10px;
+}
+.user a{
+    color:#fff
+}
+.container{
+    height: 85vh;
+    background: #ccc;
+    box-sizing: border-box;
+    border-bottom: 2px solid #6F727F;
+    border-top: 4px solid #6F727F;
+}
+footer{
+    height: 3vh;
+    line-height: 3vh;
+    background: #aaa;
+    color: #fff;
+    font-size: 0.8em;
+    text-align: center;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.container .menu{
+    width: 10vw;
+    background: #173733;
+    height: 100%;
+}
+.content{
+    width: 90vw;
+    background:#cecece;
+    display: flex;
+    justify-content: space-between;
+}
+.shrink{
+    width: 10px;
+    height: 100%;
+    cursor: pointer;
+}
+.main{
+    width: calc(100% - 10px);
+    height: 100%;
+    overflow-y: auto;
+}
+.item .controller{
+    box-sizing: border-box;
+    padding-left:20px ;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1.2em;
+    color: #fff;
+    border-bottom: 1px solid #ababab;
+    cursor: pointer;
+}
+.action li{
+    list-style: none;
+    box-sizing: border-box;
+    background: #10655a;
+    padding-left: 40px;
+    height: 1.8em;
+    line-height: 1.8em;
+    border-bottom: 1px solid #ababab;
+    cursor: pointer;
+}
+.action li a{
+    display: block;
+    background: #10655a;
+    width: 100%;
+    height: 100%;
+    color:#dedede;
+}
+.action .active{
+    background: #22788c;
+    color:#fff;
+}
+.action .active a{
+    background: #22788c;
+    color:#E6F771;
+}
+.toolbar{
+    height: 28px;
+    line-height: 28px;
+    background:#00A0E4 ;
+    display: flex;
+    justify-content: space-between;
+    color:#565656
+}
+.toolbar .search label{
+    margin-left: 10px;
+}
+.button{
+    text-align: center;
+    padding: 1px 6px;
+    border-radius: 6px;
+    border: 1px solid #666;
+    cursor: pointer;
+    background: #aaa;
+    color:#ffffff;
+}
+.input{
+    width: 120px;
+    border: 1px solid #aeaeae;
+    border-radius: 8px;
+}
+.table table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+.table table td{
+    text-align: center;
+    border: 1px solid #aaa;
+    height: 24px;
+    line-height: 24px;
+    white-space: nowrap;
+    max-width: 600px;
+    overflow: hidden;
+}
+.table table tr:nth-child(2n){
+    background: #fff;
+}
+.table tbody tr:hover{
+    background: #ECE479;
+    color:#fff
+}
+.pagination{
+    font-size: 0.9em;
+    padding: 0.1em 0;
+    text-align: right;
+    background: #abcdef;
+    color: #fff;
+}
+.pagination a{
+    margin-right: 10px;
+    display: inline-block;
+    border-radius: 6px;
+    padding:0 0.4em;
+    cursor: pointer;
+}
+.pagination a:hover{
+    background: #00A0E4;
+}
+.add,.modify,.chpass{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(180,180,180,0.6);
+    text-align: center;
+    left:0;
+    top:0;
+}
+.add table,.modify table,.chpass table{
+    background: #aaa;
+    text-align: center;
+    display: block;
+    width: 30vw;
+    margin: 100px auto 0;
+    padding: 20px;
+    max-height: 60%;
+    overflow-y: auto;
+}
+.add table caption,.modify table caption,.chpass table caption{
+    width: 100%;
+    font-size: 20px;
+    color: #0a001f;
+}
+.add table tbody,.modify table tbody,.chpass table tbody{
+    width: 100%;
+    display: block;
+}
+.add table tr,.modify table tr,.chpass table tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+    margin: 10px 0;
+}
+.add table th,.modify table th,.chpass table th{
+    width: 30%;
+}
+.add table td,.modify table td,.chpass table td{
+    width: 70%;
+}
+.biginput{
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    border:1px solid #565656;
+}
+.bigbutton{
+    height: 30px;
+   min-width: 80px;
+    text-align: center;
+    margin: 10px 20px;
+}
+.error{
+    border: 1px solid #a10;
+}

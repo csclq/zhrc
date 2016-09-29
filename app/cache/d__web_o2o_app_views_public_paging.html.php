@@ -1,0 +1,1 @@
+<div class='pagination'><a  ng-click='paging( info.p = 1 )' >首页</a><a  ng-click='paging( info.p = info.p - 1 )'>上一页</a><a>第 <span ng-bind="info.p"></span> / <span ng-bind="total"></span> 页<a  ng-click='paging( info.p = info.p + 1)'>下一页</a><a  ng-click='paging( info.p = total)'>末页</a></a></div>

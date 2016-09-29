@@ -1,0 +1,12 @@
+<div>
+    <input class="uploads" type="file" onchange="upload(this,loadming)" name="file" multiple accept="image/*" />
+    <div class="imges"></div>
+</div>
+<script src="/js/uploads.js"></script>
+<script>
+    function loadming(info) {
+        for(var i=0;i<info.length;i++){
+            $(".imges").append("<img src='"+info[i]+"' />");
+        }
+    }
+</script>
