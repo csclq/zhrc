@@ -102,6 +102,33 @@ $di->setShared('router', function () {
     $router->setDefaultNamespace('App\Controllers');
     return $router;
 });
+$di->setShared('dispatcher', function () {
+    $eventsManager = new \Phalcon\Events\Manager();
+    $eventsManager->attach("dispatch:beforeException", function ($event, $dispatcher, $exception) {
+        if ($exception instanceof DispatcherException) {
+            switch ($exception->getCode()) {
+                case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+                case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
+                    $dispatcher->forward([
+                        'controller' => 'index',
+                        'action'	 => 'route404',
+                        'params'	 => array('message' => $exception->getMessage())
+                    ]);
+                    return false;
+            }
+        }
+        $dispatcher->forward([
+            'controller' => 'errors',
+            'action'	 => 'show500'
+        ]);
+        return false;
+    });
+    $dispatcher = new \Phalcon\Mvc\Dispatcher();
+    $dispatcher->setDefaultNamespace('App\Controllers');
+    $dispatcher->setEventsManager($eventsManager);
+    return $dispatcher;
+});
+
 $di->setShared('authen', 'App\Libs\Authen');
 $di->setShared('common', 'App\Libs\Common');
 $di->setShared('thirdpart', 'App\Libs\ThirdPart');

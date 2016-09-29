@@ -312,6 +312,7 @@ class SystemController extends ControllerBase
     {
 //        if($this->request->isPost()){
         $this->view->disable();
+
         $depart=Depart::findFirst(1);
         var_dump($depart->getRemark());
     }
