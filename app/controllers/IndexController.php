@@ -56,11 +56,7 @@ class IndexController extends ControllerBase
         $this->view->disable();
     }
 
-    public function route404Action()
-    {
-        $this->view->disable();
-        echo __METHOD__;
-    }
+
 
     public function uploadAction()                          //图片上传
     {

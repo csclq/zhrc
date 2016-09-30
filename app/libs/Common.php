@@ -1,6 +1,8 @@
 <?php
 namespace App\Libs;
 
+use App\Models\Syslog;
+
 class Common{
 
     public static function infinate($arr,$level=0,$access=null){         //无限极分类
@@ -118,6 +120,15 @@ class Common{
     public static function dircount($dir=null){            // 获取指定文件夹下文件数量
         $dir||$dir= getcwd().$GLOBALS['config']['dataDir'];
         return count(scandir($dir))-2;
+    }
+
+    public static function syslog($content){
+        $log=new Syslog();
+        $log->setAddTime();
+        $log->setAddIp();
+        $log->setUsername($_SESSION['username']);
+        $log->setContent($content);
+        $log->save();
     }
 
 

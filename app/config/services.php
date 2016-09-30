@@ -110,8 +110,8 @@ $di->setShared('dispatcher', function () {
                 case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
                 case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
                     $dispatcher->forward([
-                        'controller' => 'index',
-                        'action'	 => 'route404',
+                        'controller' => 'errors',
+                        'action'	 => 'show404',
                         'params'	 => array('message' => $exception->getMessage())
                     ]);
                     return false;
@@ -119,7 +119,7 @@ $di->setShared('dispatcher', function () {
         }
         $dispatcher->forward([
             'controller' => 'errors',
-            'action'	 => 'show500'
+            'action'	 => 'show404'
         ]);
         return false;
     });
