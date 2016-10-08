@@ -1,11 +1,10 @@
 <?php
-namespace App\Controllers;
+namespace App\controllers;
 
-use App\Libs\Authen;
-use App\Libs\Common;
-use App\Models\Permission;
 
-class IndexController extends ControllerBase
+use Phalcon\Mvc\Controller;
+
+class IndexController extends Controller
 {
 
     public function indexAction()
@@ -48,23 +47,21 @@ class IndexController extends ControllerBase
 
     public function sayAction()
     {
-
-    }
-
-    public function testAction()
-    {
-        $this->view->disable();
-    }
-
-    public function route404Action()
-    {
         $this->view->disable();
         echo __METHOD__;
     }
 
+    public function testAction()
+    {
+//        $this->view->disable();
+    }
+
+
+
     public function uploadAction()                          //图片上传
     {
         $this->view->disable();
+        if ($this->request->hasFiles() == true) {
         $types = ['jpg', 'jpeg', 'gif', 'png'];             //上传类型
         $sizes = 6291456;                                   //上传大小
         $info = array();
@@ -84,6 +81,10 @@ class IndexController extends ControllerBase
             $info[$i]=$GLOBALS['config']['uploadDir'] . $file;
         }
         echo json_encode(['code'=>1,'msg'=>'ok','info'=>$info]);
+
+
+
+        }
 
     }
 }

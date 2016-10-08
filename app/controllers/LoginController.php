@@ -1,7 +1,7 @@
 <?php
-namespace App\Controllers;
+namespace App\controllers;
 
-use App\Models\Admin;
+use App\models\Admin;
 use Phalcon\Mvc\Controller;
 use Phalcon\Mvc\View;
 
@@ -39,7 +39,7 @@ class LoginController extends Controller {
             $this->session->set('depart_id',$user->getDepart());
             $this->session->set('username',$username);
             $this->session->set('uid',$user->getId());
-            header("location:/index/index");
+            header("location:/system/user");
         }else{
            echo "<script>alert('用户名或密码错误');history.back();</script>";
             exit;

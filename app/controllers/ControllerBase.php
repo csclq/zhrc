@@ -1,7 +1,6 @@
 <?php
-namespace App\Controllers;
+namespace App\controllers;
 
-use App\Models\App;
 use Phalcon\Mvc\Controller;
 
 class ControllerBase extends Controller

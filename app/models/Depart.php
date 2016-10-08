@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace App\models;
 
 class Depart extends BaseModel {
     protected  $id;
@@ -25,7 +25,7 @@ class Depart extends BaseModel {
         return date("Y-m-d H:i:s",$this->add_time);
     }
     public function getUpdateTime(){
-        return $this->update_time;
+        return date("Y-m-d H:i:s",$this->update_time);
     }
     public function setId($id){
         $this->id=$id;
@@ -43,12 +43,12 @@ class Depart extends BaseModel {
         $this->active=$active;
         return $this;
     }
-    public function setAddTime($add_time){
-        $this->add_time=$add_time;
+    public function setAddTime(){
+        $this->add_time=time();
         return $this;
     }
-    public function setUpdateTime($update_time){
-        $this->update_time=$update_time;
+    public function setUpdateTime(){
+        $this->update_time=time();
         return $this;
     }
 

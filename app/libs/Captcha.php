@@ -1,5 +1,5 @@
 <?php
-namespace  App\Libs;
+namespace  App\libs;
 
 class Captcha{                                              //验证码类
     public $size=5;                                        //字体大小

@@ -1,11 +1,11 @@
 <?php
-namespace App\Controllers;
+namespace App\controllers;
 
-use App\Models\Admin;
-use App\Models\App;
-use App\Models\Depart;
-use App\Models\Permission;
-use App\Models\Syslog;
+use App\models\Admin;
+use App\models\App;
+use App\models\Depart;
+use App\models\Permission;
+use App\models\Syslog;
 
 class SystemController extends ControllerBase
 {
@@ -62,6 +62,7 @@ class SystemController extends ControllerBase
     {             //清队缓存
         $this->common->cleancache();
         $this->common->cleancache();
+        $this->common->syslog("清除缓存");
         echo "<script>alert('缓存清除成功');history.back()</script>";
     }
 
@@ -79,6 +80,7 @@ class SystemController extends ControllerBase
                     $total++;
                 }
                 $p = $total;
+                $this->common->syslog("手动备份数据库");
             } else {
                 $p = $post['p'];
             }
@@ -109,6 +111,7 @@ class SystemController extends ControllerBase
             $file = getcwd() . $GLOBALS['config']['dataDir'] . trim($this->dispatcher->getParam(0));
             if (file_exists($file)) {
                 unlink($file);
+                $this->common->syslog("删除数据库备份");
             }
         }
         if ($this->request->isPost()) {
@@ -312,8 +315,10 @@ class SystemController extends ControllerBase
     {
 //        if($this->request->isPost()){
         $this->view->disable();
-        $depart=Depart::findFirst(1);
-        var_dump($depart->getRemark());
+
+        var_dump(filter_var('bob@example.com', FILTER_VALIDATE_EMAIL));
+        var_dump(filter_var('http://example.com', FILTER_VALIDATE_URL));
+
     }
 //    }
 

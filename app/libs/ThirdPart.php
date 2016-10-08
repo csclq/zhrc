@@ -1,9 +1,9 @@
 <?php
-namespace App\Libs;
+namespace App\libs;
 
 class ThirdPart{                                    //JAVA接口类
     public $url;                                    //接口url
-    public $port;                                   //接口端口
+    public $port=80;                                   //接口端口
     public $path='';                                //接口路径
     private $parm;                                  //传递的参数
 
