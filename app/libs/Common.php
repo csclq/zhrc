@@ -3,6 +3,8 @@ namespace App\libs;
 
 use App\Models\Syslog;
 
+use App\Models\Syslog;
+
 class Common{
 
     public static function infinate($arr,$level=0,$access=null){         //无限极分类
