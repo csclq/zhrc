@@ -105,8 +105,7 @@ $di->setShared('router', function () {
 $di->setShared('dispatcher', function () {
     $eventsManager = new \Phalcon\Events\Manager();
     $eventsManager->attach("dispatch:beforeException", function ($event, $dispatcher, $exception) {
-<<<<<<< HEAD
-=======
+
         if ($exception instanceof DispatcherException) {
             switch ($exception->getCode()) {
                 case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
@@ -119,7 +118,7 @@ $di->setShared('dispatcher', function () {
                     return false;
             }
         }
->>>>>>> e47c458d90e325029fad09d7b792205caba512e1
+
         $dispatcher->forward([
             'controller' => 'errors',
             'action'	 => 'show404'
