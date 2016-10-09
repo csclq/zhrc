@@ -1,11 +1,11 @@
 <?php
-namespace App\Controllers;
+namespace App\controllers;
 
-use App\Models\Admin;
-use App\Models\App;
-use App\Models\Depart;
-use App\Models\Permission;
-use App\Models\Syslog;
+use App\models\Admin;
+use App\models\App;
+use App\models\Depart;
+use App\models\Permission;
+use App\models\Syslog;
 
 class SystemController extends ControllerBase
 {
@@ -316,8 +316,9 @@ class SystemController extends ControllerBase
 //        if($this->request->isPost()){
         $this->view->disable();
 
-        $depart=Depart::findFirst(1);
-        var_dump($depart->getRemark());
+        var_dump(filter_var('bob@example.com', FILTER_VALIDATE_EMAIL));
+        var_dump(filter_var('http://example.com', FILTER_VALIDATE_URL));
+
     }
 //    }
 

@@ -13,6 +13,7 @@ function upload(obj,callback) {              //obj:调用函数的对象，实�
         processData: false,
         contentType: false
     }).done(function(res) {
+        console.log(res)
         if(res.code==1){
             if(callback&& (typeof(callback)=='function')){
                 callback(res.info);

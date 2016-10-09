@@ -1,5 +1,5 @@
 <?php
-namespace App\Libs;
+namespace App\libs;
 
 use App\Models\Syslog;
 

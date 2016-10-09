@@ -1,16 +1,16 @@
 <div class="permission">
     <form action="" method="post">
-    <label style="display: inline-block;height: 30px;line-height: 30px;font-size: 18px;margin: 0 4px"><input type="checkbox" id="all" > 全选 </label><span onclick="add(0)"> 添加控制器</span>
+    <label style="display: inline-block;height: 30px;line-height: 30px;font-size: 18px;padding: 0 4px;background: #00a4ff;color:#fff;box-sizing: border-box"><input type="checkbox" id="all" > 全选 </label><span onclick="add(0)"> 添加控制器</span>
     {% for controller in list %}
-        <div class="controller"><label style="display: inline-block;height: 30px;line-height: 30px;font-size: 18px;margin: 0 4px"><input name="app[]" type="checkbox" value="{{ controller['id'] }}"  {% if controller['checked'] %} checked {% endif %}  /> {{ controller['remark'] }}</label><span onclick="add({{ controller['id'] }})">添加方法</span></div>
-        <div class="action">
+        <div class="controller" style="background: #00A0E4;color: #fff"><label style="display: inline-block;height: 30px;line-height: 30px;font-size: 18px;margin: 0 4px"><input name="app[]" type="checkbox" value="{{ controller['id'] }}"  {% if controller['checked'] %} checked {% endif %}  /> {{ controller['remark'] }}</label><span onclick="add({{ controller['id'] }})">添加方法</span></div>
+        <div class="action" >
         {% for action in controller['child'] %}
             <label style="display: inline-block;height: 30px;line-height: 30px;margin: 0 10px"><input name="app[]" type="checkbox" value="{{ action['id'] }}"   {% if action['checked'] %} checked {% endif %}  /> {{ action['remark'] }}</label>
         {% endfor %}
         </div>
     {% endfor %}
     <br />
-    <input type="submit" style="width: 150px;height: 30px;border-radius: 10px;background: #00a65a;color:#fff;font-size: 18px;cursor: pointer;text-align: center" value="确 &nbsp; &nbsp; &nbsp; &nbsp;   定" />
+    <input type="submit" style="width: 150px;height: 30px;border-radius: 10px;background: #00a4ff;color:#fff;font-size: 18px;cursor: pointer;text-align: center" value="确 &nbsp; &nbsp; &nbsp; &nbsp;   定" />
     </form>
 </div>
 
@@ -35,7 +35,7 @@
             <tr>
                 <td colspan="2">
                     <input type="hidden" name="pid" ng-model="add.pid">
-                    <input type="submit" class="bigbutton" value=" 确 定 " ng-disabled="addForm.$invalid" ng-click="addsub()" />
+                    <input type="submit" class="bigbutton" value=" 确 定 " ng-disabled="addForm.$invalid" ng-click="addsub()"  />
                 </td>
             </tr>
         </table>
