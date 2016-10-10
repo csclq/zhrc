@@ -10,39 +10,7 @@ class IndexController extends Controller
     public function indexAction()
     {
         $this->view->title = "abcedfg";
-//        $this->view->disable();
-//        $admin=new Admin();
-//        $depart=new Depart();
-//        $depart->setAddTime(time());
-//        $depart->setName("财务");
-//        $depart->setUpdateTime(time());
-//        $depart->setRemark("财务");
-//        $arr=array(
-//            'name'  =>  'wangchao',
-//            'passwd'    =>  md5("123456"),
-//            'depart'    =>  $depart,
-//            'add_time'  =>  time(),
-//            'update_time'   =>  time(),
-//            'login_time'    =>  time(),
-//            'login_ip'  =>  $_SERVER['REMOTE_ADDR']
-//        );
-//        $admin->setName("wangchao");
-//        $admin->setDepart($depart);
 
-//        var_dump($admin->save());
-//        echo '<br />',$admin->getId();
-
-//        var_dump(Admin::findFirst()->permisn->toArray());
-//        $depart= Depart::find()->toArray();
-//        foreach ($depart as &$item) {
-////            var_dump($item);
-//            $depart['perm']=App::find(array("id in :id",
-//                "bind" => array('id'=>$item['permission'])));
-//        }
-//        var_dump($depart);
-//        echo __METHOD__;
-//        echo "<pre>";
-//        print_r($this->view->menus);
     }
 
     public function sayAction()
