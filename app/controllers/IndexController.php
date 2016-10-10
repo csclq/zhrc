@@ -21,8 +21,12 @@ class IndexController extends Controller
 
     public function testAction()
     {
+<<<<<<< HEAD
 
 
+=======
+//        $this->view->disable();
+>>>>>>> 3389efd2b9d119312d62a4a69d05d9c5590513bb
     }
 
 
@@ -55,12 +59,15 @@ class IndexController extends Controller
 
         }
 
+<<<<<<< HEAD
     }
 
 
     public function phpinfoAction(){
         $this->view->disable();
         phpinfo();
+=======
+>>>>>>> 3389efd2b9d119312d62a4a69d05d9c5590513bb
     }
 }
 

@@ -1,7 +1,10 @@
 <?php
 namespace App\libs;
 
-use App\Models\Syslog;
+
+use App\models\Syslog;
+
+
 
 class Common{
 

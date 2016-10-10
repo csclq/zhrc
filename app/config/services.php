@@ -105,7 +105,7 @@ $di->setShared('router', function () {
 $di->setShared('dispatcher', function () {
     $eventsManager = new \Phalcon\Events\Manager();
     $eventsManager->attach("dispatch:beforeException", function ($event, $dispatcher, $exception) {
-        var_dump($exception);exit;
+
         $dispatcher->forward([
             'controller' => 'errors',
             'action'	 => 'show404'
