@@ -99,12 +99,13 @@ $di->setShared('session', function () {
 
 $di->setShared('router', function () {
     $router = new \Phalcon\Mvc\Router();
-    $router->setDefaultNamespace('App\Controllers');
+    $router->setDefaultNamespace('App\controllers');
     return $router;
 });
 $di->setShared('dispatcher', function () {
     $eventsManager = new \Phalcon\Events\Manager();
     $eventsManager->attach("dispatch:beforeException", function ($event, $dispatcher, $exception) {
+        var_dump($exception);exit;
         $dispatcher->forward([
             'controller' => 'errors',
             'action'	 => 'show404'
@@ -112,12 +113,12 @@ $di->setShared('dispatcher', function () {
         return false;
     });
     $dispatcher = new \Phalcon\Mvc\Dispatcher();
-    $dispatcher->setDefaultNamespace('App\Controllers');
+    $dispatcher->setDefaultNamespace('App\controllers');
     $dispatcher->setEventsManager($eventsManager);
     return $dispatcher;
 });
 
-$di->setShared('authen', 'App\Libs\Authen');
-$di->setShared('common', 'App\Libs\Common');
-$di->setShared('thirdpart', 'App\Libs\ThirdPart');
-$di->setShared('captcha', 'App\Libs\Captcha');
+$di->setShared('authen', 'App\libs\Authen');
+$di->setShared('common', 'App\libs\Common');
+$di->setShared('thirdpart', 'App\libs\ThirdPart');
+$di->setShared('captcha', 'App\libs\Captcha');

@@ -20,6 +20,7 @@ class ThirdPart{                                    //JAVA接口类
     }
 
    public function curl_post(){                 //post接口返回数据
+
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_PORT => $this->port,
@@ -31,10 +32,12 @@ class ThirdPart{                                    //JAVA接口类
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $this->parm,
-            CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache",
-                "content-type: application/json",
-            ),
+            CURLOPT_CONNECTTIMEOUT=>0,
+            CURLOPT_TIMEOUT=>100000
+//            CURLOPT_HTTPHEADER => array(
+//                "cache-control: no-cache",
+//                "content-type: application/json",
+//            ),
         ));
         $response = curl_exec($curl);
         $err = curl_error($curl);

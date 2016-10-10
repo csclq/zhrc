@@ -53,7 +53,8 @@ class IndexController extends Controller
 
     public function testAction()
     {
-//        $this->view->disable();
+
+
     }
 
 
@@ -86,6 +87,12 @@ class IndexController extends Controller
 
         }
 
+    }
+
+
+    public function phpinfoAction(){
+        $this->view->disable();
+        phpinfo();
     }
 }
 

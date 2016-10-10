@@ -1,2 +1,8 @@
-<input type="file" name="" id="" onchange="upload(this)">
-<script src="/js/uploads.js"></script>
+<button id="formbtn">haha</button>
+<script>
+    $("#formbtn").click(function () {
+        $.post('/wechat',{'name':'zhangsan','age':18,'height':60},function (a) {
+            console.log(a)
+        })
+    })
+</script>
